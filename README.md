@@ -1,232 +1,58 @@
-<a href="https://trendshift.io/repositories/151" target="_blank"><img src="https://trendshift.io/api/badge/repositories/151" alt="jaygajera17%2FE-commerce-project-springBoot | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+# Spring Boot E-Commerce - Code Analysis
 
-# E-commerce Spring Boot (JSP + Hibernate)
+A sample Spring Boot e-commerce application used to demonstrate static code analysis, identify technical debt, and highlight violations of SOLID design principles.
 
-Production-oriented Java e-commerce web application built with Spring Boot, JSP, Spring Security, and Hibernate SessionFactory.
+## Setup & Installation
 
-This project follows a layered MVC architecture and supports role-based access for admin and customer workflows.
+**1. Clone & Init**
+Get the code and explore the base structure.
+![Git Clone](images/git-clone.png)
 
-<br/><br/>
+**2. Environment**
+Requires Java, Maven, and MySQL. Import `basedata.sql` to set up the database.
+![GitHub Repository](images/Github%20Repository.png)
 
-<h1>🛒 E-Commerce Spring Boot</h1>
- 
-<p>A production-oriented Java e-commerce web application built with Spring Boot, JSP, Spring Security, and Hibernate — featuring role-based access for admin and customer workflows.</p>
-<br/>
-<!-- Badges Row 1: Community -->
-<p>
-  <a href="https://github.com/jaygajera17/E-commerce-project-springBoot/stargazers">
-    <img src="https://img.shields.io/github/stars/jaygajera17/E-commerce-project-springBoot?style=flat-square&logo=github&labelColor=1a1a2e&color=f5a623&label=Stars" alt="Stars"/>
-  </a>
-  <a href="https://github.com/jaygajera17/E-commerce-project-springBoot/network/members">
-    <img src="https://img.shields.io/github/forks/jaygajera17/E-commerce-project-springBoot?style=flat-square&logo=github&labelColor=1a1a2e&color=4a90d9&label=Forks" alt="Forks"/>
-  </a>
-  <a href="https://github.com/jaygajera17/E-commerce-project-springBoot/issues">
-    <img src="https://img.shields.io/github/issues/jaygajera17/E-commerce-project-springBoot?style=flat-square&logo=github&labelColor=1a1a2e&color=e05c5c&label=Issues" alt="Issues"/>
-  </a>
-  <a href="https://github.com/jaygajera17/E-commerce-project-springBoot/pulls">
-    <img src="https://img.shields.io/github/issues-pr/jaygajera17/E-commerce-project-springBoot?style=flat-square&logo=github&labelColor=1a1a2e&color=8e44ad&label=Pull+Requests" alt="Pull Requests"/>
-  </a>
-  <a href="https://github.com/jaygajera17/E-commerce-project-springBoot/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/jaygajera17/E-commerce-project-springBoot?style=flat-square&logo=github&labelColor=1a1a2e&color=27ae60&label=Contributors" alt="Contributors"/>
-  </a>
-</p>
+**3. Tooling**
+We use SonarQube for static analysis. Install the package to get started.
+![SonarQube Installation](images/1-%20Installation%20pakcage%20sonarqube.png)
 
-<br/>
+---
 
-## Highlights
+## Code Analysis Workflow
 
-- Server-rendered e-commerce app (JSP views)
-- Spring Security authentication and role-based authorization
-- Custom Hibernate SessionFactory configuration (non-Spring-Data JPA runtime)
-- MySQL-backed persistence with DAO and service layers
-- Admin modules for products, categories, and customer listing
-- User modules for registration, login, profile management, and product browsing
-- Jenkins pipeline file included for CI/CD bootstrap
+The project uses automated quality gates to track technical debt and code smells.
 
-## Tech Stack
+**1. Run the Scan**
+Execute the SonarQube scanner against the codebase.
+![Running SonarQube](images/2-%20Running%20Sonarqube.png)
 
-<p>
-  <img src="https://img.shields.io/badge/Java-11-ED8B00?style=flat-square&logo=openjdk&logoColor=white&labelColor=1a1a2e" alt="Java 11"/>
-  <img src="https://img.shields.io/badge/Spring%20Boot-2.6.4-6DB33F?style=flat-square&logo=springboot&logoColor=white&labelColor=1a1a2e" alt="Spring Boot"/>
-  <img src="https://img.shields.io/badge/Spring%20Security-5.x-6DB33F?style=flat-square&logo=springsecurity&logoColor=white&labelColor=1a1a2e" alt="Spring Security"/>
-  <img src="https://img.shields.io/badge/Hibernate-ORM-59666C?style=flat-square&logo=hibernate&logoColor=white&labelColor=1a1a2e" alt="Hibernate"/>
-  <img src="https://img.shields.io/badge/MySQL-8.x-4479A1?style=flat-square&logo=mysql&logoColor=white&labelColor=1a1a2e" alt="MySQL"/>
-  <img src="https://img.shields.io/badge/Maven-Build-C71A36?style=flat-square&logo=apachemaven&logoColor=white&labelColor=1a1a2e" alt="Maven"/>
-</p>
+**2. Review Dashboard**
+Check the results for vulnerabilities and code smells.
+![SonarQube Results](images/3-%20Sonarqube%20Results.png)
 
-- Java 11
-- Spring Boot 2.6.4
-- Spring MVC
-- Spring Security
-- Hibernate ORM (via `LocalSessionFactoryBean`)
-- JSP + JSTL + Tomcat Jasper
-- MySQL 8 connector
-- Maven
+**3. Cloud Integration**
+Results are pushed to SonarQube Cloud for centralized reporting.
+![Cloud Integration](images/4-%20Sonarqube%20Cloud%20Integration.png)
+![Payload Download](images/5-%20Downloading%20the%20payload.png)
+
+---
+
+## SOLID Principles & Code Smells
+
+Based on the SonarQube audit (`code_smells.csv`), here is how the identified technical debt maps to SOLID principle violations:
+
+| Principle | Rules Triggered | What went wrong in the code? |
+| :--- | :--- | :--- |
+| **SRP** (Single Responsibility) | S120, S101, S117, S7930 | **Naming Chaos & God Classes**: DAOs, Services, and Controllers lack structural discipline. Mixed UI responsibilities (e.g., duplicate DOM IDs in JSPs). |
+| **OCP** (Open/Closed) | S1192, S7926 | **Hardcoded Literals**: Auth routes (`"/login"`) and UI viewports are hardcoded. Changing behavior requires modifying existing files instead of extending them. |
+| **LSP** (Liskov Substitution) | S6819 | **Broken Semantics**: Improper use of ARIA roles instead of standard HTML5 elements (e.g., using `role="dialog"` instead of `<dialog>`), breaking expected document behavior. |
+| **ISP** (Interface Segregation) | S1186, S5254, ImgAlt | **Dead Code**: Empty methods in `Cart.java` and test files, plus missing mandatory HTML attributes (`alt`, `lang`), showing classes/views are forced to implement things they don't use. |
+| **DIP** (Dependency Inversion) | S116 | **Leaky Abstractions**: Public fields in `HibernateConfiguration.java` expose internal database credentials directly to higher-level modules. |
+
+---
 
 ## Project Structure
-
-```text
-src/main/java/com/jtspringproject/JtSpringProject/
-  configuration/     # Security config
-  controller/        # MVC controllers
-  dao/               # Data access layer
-  models/            # Entities
-  services/          # Business layer
-  repository/        # Spring Data repository (partial)
-  HibernateConfiguration.java
-  JtSpringProjectApplication.java
-src/main/resources/
-  application.properties
-src/main/webapp/views/
-  *.jsp
-basedata.sql
-pom.xml
-```
-
-## Getting Started
-
-### Prerequisites
-
-- Java 11+
-- Maven 3.8+
-- MySQL or MariaDB
-
-### 1) Clone and move into project
-
-```bash
-git clone https://github.com/jaygajera17/E-commerce-project-springBoot.git
-cd E-commerce-project-springBoot
-```
-
-### 2) Configure database
-
-Update `src/main/resources/application.properties`:
-
-```properties
-db.driver=com.mysql.cj.jdbc.Driver
-db.url=jdbc:mysql://localhost:3306/ecommjava?createDatabaseIfNotExist=true
-db.username=your_db_user
-db.password=your_db_password
-
-hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
-hibernate.show_sql=true
-hibernate.hbm2ddl.auto=update
-entitymanager.packagesToScan=com
-```
-
-### 3) Optional: seed sample data
-
-Run `basedata.sql` against your database if you want initial categories/users/products.
-
-Note: sample credentials in `basedata.sql` are development-only defaults.
-
-### 4) Run the app
-
-```bash
-mvn clean package
-mvn spring-boot:run
-```
-
-App URL: http://localhost:8080/
-
-## IDE Notes (IntelliJ)
-
-If JSP views are not resolved, set the run configuration working directory to `$MODULE_WORKING_DIR$`.
-
-## Core Endpoints
-
-### Public/User
-
-- `/`
-- `/login`
-- `/register`
-- `/newuserregister`
-- `/user/products`
-- `/profileDisplay`
-
-### Admin
-
-- `/admin/`
-- `/admin/Dashboard`
-- `/admin/products`
-- `/admin/categories`
-- `/admin/customers`
-
-## Security Model
-
-- Admin routes under `/admin/**` require role `ADMIN`
-- User routes require role `USER`
-- Login pages:
-  - Admin: `/admin/login`
-  - User: `/login`
-- CSRF protection is enabled for form submissions
-
-## Build and Test
-
-```bash
-mvn clean verify
-```
-
-Notes:
-
-- `mvn test` requires a reachable database because context startup initializes Hibernate and datasource beans.
-
-## CI/CD
-
-A Jenkins pipeline is included in `jenkins file` with stages for:
-
-- Checkout
-- Build
-- Test
-- Deploy (template placeholder)
-
-Adjust branch, deployment steps, and credentials for your environment.
-
-## Troubleshooting
-
-- `Could not resolve placeholder 'db.driver'`:
-  - Ensure all `db.*` keys exist in `application.properties`
-- JSP pages not rendering:
-  - Verify working directory and `spring.mvc.view.prefix=/views/`
-- Tests failing on startup:
-  - Start MySQL and verify connection credentials first
-
-## Screenshots
-
-![Preview 1](https://github.com/jaygajera17/E-commerce-project-springBoot/assets/81226571/02a04d3c-1fc9-418c-b231-639f6525d07e)
-![Preview 2](https://github.com/jaygajera17/E-commerce-project-springBoot/assets/81226571/24c4451b-43a6-4c23-a78a-786eab4303b0)
-![Preview 3](https://github.com/jaygajera17/E-commerce-project-springBoot/assets/81226571/93c1baeb-326c-450f-867e-a883900a6644)
-
-## Roadmap
-
-See the full roadmap in [roadmap.md](roadmap.md).
-
-Current priorities:
-
-- Solid foundation: CI, Docker Compose, contribution workflow, and test coverage.
-- Complete e-commerce domain: cart, checkout, auth, search, and API docs.
-- Industry patterns: caching, concurrency control, observability, and scalability.
-- Long-term architecture: event-driven patterns and microservice decomposition guide.
-
-## Demo
-
-demo video: https://youtu.be/c6WWdINWSlI
-
-## ⭐ Support This Project
-
-If this project helped you, please consider giving it a star on GitHub.
-Your support helps improve visibility and motivates future maintenance.
-
-## Star History
-
-<a href="https://www.star-history.com/?repos=jaygajera17%2FE-commerce-project-springBoot&type=date&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=jaygajera17/E-commerce-project-springBoot&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=jaygajera17/E-commerce-project-springBoot&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=jaygajera17/E-commerce-project-springBoot&type=date&legend=top-left" />
- </picture>
-</a>
-
-<div align="center">
-  <sub>Built as a college project · Grown into a community resource · Maintained with ❤️</sub>
-</div>
+- `src/main/java/.../controller`: HTTP routing (Heavy SRP/OCP violations).
+- `src/main/java/.../dao`: Data Access layer.
+- `src/main/webapp/views`: JSP frontend (Heavy LSP/ISP violations).
+- `code-smella/`: Raw SonarQube CSV exports.

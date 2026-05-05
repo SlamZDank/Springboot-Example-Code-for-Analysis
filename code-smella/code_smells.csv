@@ -1,0 +1,68 @@
+#,Severity,Rule,File,Line,Message,Status,Effort (min)
+1,CRITICAL,java:S1192,src/main/java/com/jtspringproject/JtSpringProject/configuration/SecurityConfiguration.java,63,"Define a constant instead of duplicating this literal ""/login"" 3 times.",OPEN,8min
+2,MINOR,java:S120,src/main/java/com/jtspringproject/JtSpringProject/models/CartProductId.java,1,Rename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.,OPEN,10min
+3,MINOR,java:S120,src/main/java/com/jtspringproject/JtSpringProject/repository/CartProductRepository.java,1,Rename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.,OPEN,10min
+4,MINOR,java:S120,src/main/java/com/jtspringproject/JtSpringProject/controller/ErrorController.java,1,Rename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.,OPEN,10min
+5,MAJOR,Web:S5254,src/main/webapp/views/403.jsp,4,"Add ""lang"" and/or ""xml:lang"" attributes to this ""<html>"" element",OPEN,2min
+6,CRITICAL,java:S1192,src/main/java/com/jtspringproject/JtSpringProject/configuration/SecurityConfiguration.java,34,"Define a constant instead of duplicating this literal ""/admin/login"" 3 times.",OPEN,8min
+7,MINOR,java:S120,src/main/java/com/jtspringproject/JtSpringProject/configuration/SecurityConfiguration.java,1,Rename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.,OPEN,10min
+8,CRITICAL,java:S1192,src/main/java/com/jtspringproject/JtSpringProject/controller/AdminController.java,81,"Define a constant instead of duplicating this literal ""redirect:/admin/categories"" 3 times.",OPEN,8min
+9,MINOR,java:S120,src/main/java/com/jtspringproject/JtSpringProject/dao/cartProductDao.java,1,Rename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.,OPEN,10min
+10,MINOR,java:S101,src/main/java/com/jtspringproject/JtSpringProject/dao/cartProductDao.java,14,Rename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.,OPEN,5min
+11,MINOR,java:S117,src/main/java/com/jtspringproject/JtSpringProject/dao/cartProductDao.java,33,Rename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.,OPEN,2min
+12,MINOR,java:S120,src/main/java/com/jtspringproject/JtSpringProject/models/CartProduct.java,1,Rename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.,OPEN,10min
+13,MINOR,java:S120,src/main/java/com/jtspringproject/JtSpringProject/dao/cartDao.java,1,Rename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.,OPEN,10min
+14,MINOR,java:S101,src/main/java/com/jtspringproject/JtSpringProject/dao/cartDao.java,11,Rename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.,OPEN,5min
+15,MINOR,java:S120,src/main/java/com/jtspringproject/JtSpringProject/models/Cart.java,1,Rename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.,OPEN,10min
+16,CRITICAL,java:S1186,src/main/java/com/jtspringproject/JtSpringProject/models/Cart.java,21,"Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.",OPEN,5min
+17,MINOR,java:S120,src/main/java/com/jtspringproject/JtSpringProject/services/cartService.java,1,Rename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.,OPEN,10min
+18,MINOR,java:S101,src/main/java/com/jtspringproject/JtSpringProject/services/cartService.java,12,Rename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.,OPEN,5min
+19,MINOR,Web:S5725,src/main/webapp/views/index.jsp,62,Make sure not using resource integrity feature is safe here.,OPEN,5min
+20,CRITICAL,java:S1192,src/main/java/com/jtspringproject/JtSpringProject/controller/AdminController.java,66,"Define a constant instead of duplicating this literal ""categories"" 4 times.",OPEN,10min
+21,CRITICAL,java:S1192,src/main/java/com/jtspringproject/JtSpringProject/controller/AdminController.java,120,"Define a constant instead of duplicating this literal ""redirect:/admin/products"" 3 times.",OPEN,8min
+22,MINOR,Web:ImgWithoutAltCheck,src/main/webapp/views/uproduct.jsp,82,"Add an ""alt"" attribute to this image.",OPEN,5min
+23,MINOR,java:S120,src/main/java/com/jtspringproject/JtSpringProject/HibernateConfiguration.java,1,Rename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.,OPEN,10min
+24,MINOR,java:S116,src/main/java/com/jtspringproject/JtSpringProject/HibernateConfiguration.java,19,"Rename this field ""DRIVER"" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.",OPEN,2min
+25,MINOR,java:S116,src/main/java/com/jtspringproject/JtSpringProject/HibernateConfiguration.java,22,"Rename this field ""PASSWORD"" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.",OPEN,2min
+26,MINOR,java:S116,src/main/java/com/jtspringproject/JtSpringProject/HibernateConfiguration.java,25,"Rename this field ""URL"" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.",OPEN,2min
+27,MINOR,java:S116,src/main/java/com/jtspringproject/JtSpringProject/HibernateConfiguration.java,28,"Rename this field ""USERNAME"" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.",OPEN,2min
+28,MINOR,java:S116,src/main/java/com/jtspringproject/JtSpringProject/HibernateConfiguration.java,31,"Rename this field ""DIALECT"" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.",OPEN,2min
+29,MINOR,java:S116,src/main/java/com/jtspringproject/JtSpringProject/HibernateConfiguration.java,34,"Rename this field ""SHOW_SQL"" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.",OPEN,2min
+30,MINOR,java:S116,src/main/java/com/jtspringproject/JtSpringProject/HibernateConfiguration.java,37,"Rename this field ""HBM2DDL_AUTO"" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.",OPEN,2min
+31,MINOR,java:S116,src/main/java/com/jtspringproject/JtSpringProject/HibernateConfiguration.java,40,"Rename this field ""PACKAGES_TO_SCAN"" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.",OPEN,2min
+32,MINOR,java:S120,src/main/java/com/jtspringproject/JtSpringProject/JtSpringProjectApplication.java,1,Rename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.,OPEN,10min
+33,MINOR,java:S120,src/main/java/com/jtspringproject/JtSpringProject/controller/AdminController.java,1,Rename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.,OPEN,10min
+34,MINOR,java:S120,src/main/java/com/jtspringproject/JtSpringProject/controller/UserController.java,1,Rename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.,OPEN,10min
+35,MINOR,java:S120,src/main/java/com/jtspringproject/JtSpringProject/dao/categoryDao.java,1,Rename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.,OPEN,10min
+36,MINOR,java:S101,src/main/java/com/jtspringproject/JtSpringProject/dao/categoryDao.java,13,Rename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.,OPEN,5min
+37,MINOR,java:S120,src/main/java/com/jtspringproject/JtSpringProject/dao/productDao.java,1,Rename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.,OPEN,10min
+38,MINOR,java:S101,src/main/java/com/jtspringproject/JtSpringProject/dao/productDao.java,13,Rename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.,OPEN,5min
+39,MINOR,java:S120,src/main/java/com/jtspringproject/JtSpringProject/dao/userDao.java,1,Rename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.,OPEN,10min
+40,MINOR,java:S101,src/main/java/com/jtspringproject/JtSpringProject/dao/userDao.java,16,Rename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.,OPEN,5min
+41,MINOR,java:S120,src/main/java/com/jtspringproject/JtSpringProject/models/Category.java,1,Rename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.,OPEN,10min
+42,MINOR,java:S120,src/main/java/com/jtspringproject/JtSpringProject/models/Product.java,1,Rename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.,OPEN,10min
+43,MINOR,java:S120,src/main/java/com/jtspringproject/JtSpringProject/models/User.java,1,Rename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.,OPEN,10min
+44,MINOR,java:S120,src/main/java/com/jtspringproject/JtSpringProject/services/categoryService.java,1,Rename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.,OPEN,10min
+45,MINOR,java:S101,src/main/java/com/jtspringproject/JtSpringProject/services/categoryService.java,11,Rename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.,OPEN,5min
+46,MINOR,java:S120,src/main/java/com/jtspringproject/JtSpringProject/services/productService.java,1,Rename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.,OPEN,10min
+47,MINOR,java:S101,src/main/java/com/jtspringproject/JtSpringProject/services/productService.java,11,Rename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.,OPEN,5min
+48,MINOR,java:S120,src/main/java/com/jtspringproject/JtSpringProject/services/userService.java,1,Rename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.,OPEN,10min
+49,MINOR,java:S101,src/main/java/com/jtspringproject/JtSpringProject/services/userService.java,14,Rename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.,OPEN,5min
+50,MAJOR,Web:S7926,src/main/webapp/views/adminHome.jsp,5,Meta viewport disables zoom via user-scalable=no.,OPEN,5min
+51,MAJOR,Web:S7926,src/main/webapp/views/cartproduct.jsp,10,Meta viewport disables zoom via user-scalable=no.,OPEN,5min
+52,MAJOR,Web:S7926,src/main/webapp/views/categories.jsp,8,Meta viewport disables zoom via user-scalable=no.,OPEN,5min
+53,MAJOR,Web:S6819,src/main/webapp/views/categories.jsp,58,Use <dialog> instead of the dialog role to ensure accessibility across all devices.,OPEN,5min
+54,MAJOR,Web:S6819,src/main/webapp/views/categories.jsp,61,Use <html> instead of the document role to ensure accessibility across all devices.,OPEN,5min
+55,MAJOR,Web:S6819,src/main/webapp/views/categories.jsp,128,Use <dialog> instead of the dialog role to ensure accessibility across all devices.,OPEN,5min
+56,MAJOR,Web:S6819,src/main/webapp/views/categories.jsp,131,Use <html> instead of the document role to ensure accessibility across all devices.,OPEN,5min
+57,CRITICAL,Web:S7930,src/main/webapp/views/categories.jsp,135,"Duplicate id ""exampleModalLongTitle"" found. First occurrence was on line 66.",OPEN,5min
+58,MAJOR,Web:S7926,src/main/webapp/views/displayCustomers.jsp,10,Meta viewport disables zoom via user-scalable=no.,OPEN,5min
+59,MAJOR,Web:S7926,src/main/webapp/views/index.jsp,11,Meta viewport disables zoom via user-scalable=no.,OPEN,5min
+60,MAJOR,Web:S7926,src/main/webapp/views/products.jsp,7,Meta viewport disables zoom via user-scalable=no.,OPEN,5min
+61,MINOR,Web:ImgWithoutAltCheck,src/main/webapp/views/products.jsp,80,"Add an ""alt"" attribute to this image.",OPEN,5min
+62,MAJOR,Web:S7926,src/main/webapp/views/productsAdd.jsp,9,Meta viewport disables zoom via user-scalable=no.,OPEN,5min
+63,MAJOR,Web:S7926,src/main/webapp/views/productsUpdate.jsp,8,Meta viewport disables zoom via user-scalable=no.,OPEN,5min
+64,MAJOR,Web:S7926,src/main/webapp/views/register.jsp,5,Meta viewport disables zoom via user-scalable=no.,OPEN,5min
+65,MAJOR,Web:S7926,src/main/webapp/views/updateProfile.jsp,5,Meta viewport disables zoom via user-scalable=no.,OPEN,5min
+66,MAJOR,Web:S7926,src/main/webapp/views/uproduct.jsp,10,Meta viewport disables zoom via user-scalable=no.,OPEN,5min
+67,CRITICAL,java:S1186,src/test/java/com/jtspringproject/JtSpringProject/JtSpringProjectApplicationTests.java,10,"Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.",OPEN,5min
